@@ -1,0 +1,34 @@
+{
+  "name": "Alam Md Tasin",
+  "headline": "DevOps Engineer | Cloud Infrastructure | AI Research",
+  "location": "Higashi-Hiroshima, Japan",
+  "email": "alam.tasin.cse@gmail.com",
+  "github": "https://github.com/Tasin007",
+  "linkedin": "https://www.linkedin.com/in/tasin-alam-2034bb2a0",
+  "experience": "1.5+ years",
+  "production_impact": {
+    "platforms_supported": "6–7",
+    "containerized_services": "200+",
+    "peak_services": "300+",
+    "users_served": "1 million+",
+    "release_frequency": "Near-daily"
+  },
+  "focus": [
+    "AWS",
+    "Linux",
+    "Docker",
+    "CI/CD",
+    "Observability",
+    "Automation",
+    "LLM-driven web agents"
+  ],
+  "current_role": {
+    "title": "Research Student",
+    "institution": "Hiroshima University",
+    "topic": "LLM-driven web automation systems"
+  },
+  "languages": {
+    "english": "TOEIC L&R 795/990",
+    "japanese": "Beginner; studying toward JLPT N4"
+  }
+}
