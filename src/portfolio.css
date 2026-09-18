@@ -1764,6 +1764,9 @@ ol {
   padding: 40px;
   gap: 30px;
   align-items: center;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
 }
 .recruiter-panel h3 {
   font-size: 32px;
