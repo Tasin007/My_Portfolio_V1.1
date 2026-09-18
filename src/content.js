@@ -334,7 +334,12 @@ export const evidence = [
     title: "Linux Foundation and OpenSSF credentials",
     text: certifications
       .map((certificate) =>
-        [certificate.title, certificate.code, certificate.issuer, certificate.focus].join(" "),
+        [
+          certificate.title,
+          certificate.code,
+          certificate.issuer,
+          certificate.focus,
+        ].join(" "),
       )
       .join(" "),
   },
