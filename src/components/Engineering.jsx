@@ -79,11 +79,16 @@ export function Architecture({ flat, state }) {
       </div>
       <div className={"spatial-world " + (flat ? "flat" : "")}>
         <div className="floor-grid" />
-        <svg className="routes" viewBox="0 0 1000 440" aria-hidden="true">
-          <path d="M100 220L260 100L430 220L580 100L750 220L900 100" />
+        <svg
+          className="routes"
+          viewBox="0 0 790 430"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path d="M55 230L180 140L305 230L430 140L555 230L680 140" />
           <path
             className={playing ? "packet moving" : "packet"}
-            d="M100 220L260 100L430 220L580 100L750 220L900 100"
+            d="M55 230L180 140L305 230L430 140L555 230L680 140"
           />
         </svg>
         {nodes.map(([name, Icon], i) => (
