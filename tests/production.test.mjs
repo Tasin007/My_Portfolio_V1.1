@@ -34,6 +34,8 @@ test("compiled production bundle renders and opens interactive research", async 
     ]) {
       assert.ok((await readFile("dist/" + document)).byteLength > 1_000);
     }
+    for (const asset of ["robots.txt", "sitemap.xml", "social-preview.png"])
+      assert.ok((await readFile("dist/" + asset)).byteLength > 20);
     dom.window.eval(await readFile("dist/assets/" + filename, "utf8"));
     await new Promise((r) => setTimeout(r, 80));
     const d = dom.window.document;

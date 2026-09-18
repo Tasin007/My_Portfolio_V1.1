@@ -550,6 +550,8 @@ async function serveStaticFile(req, res, requestUrl) {
     ".ico": "image/x-icon",
     ".pdf": "application/pdf",
     ".json": "application/json; charset=utf-8",
+    ".txt": "text/plain; charset=utf-8",
+    ".xml": "application/xml; charset=utf-8",
     ".webmanifest": "application/manifest+json",
     ".woff": "font/woff",
     ".woff2": "font/woff2",

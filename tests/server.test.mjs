@@ -25,6 +25,9 @@ test("local server serves allowlisted build and reports missing provider honestl
     assert.equal(caps.ai, false);
     assert.equal(caps.translation, false);
     assert.equal((await fetch(root + "/tasin-icon.svg")).status, 200);
+    assert.equal((await fetch(root + "/robots.txt")).status, 200);
+    assert.equal((await fetch(root + "/sitemap.xml")).status, 200);
+    assert.equal((await fetch(root + "/social-preview.png")).status, 200);
     for (const document of [
       "Alam_Md_Tasin_Resume.pdf",
       "Alam_Md_Tasin_DevOps_Engineer_CV.pdf",

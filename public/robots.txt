@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://my-new-portfolio-iota-two.vercel.app/sitemap.xml

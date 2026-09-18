@@ -43,10 +43,64 @@ import { Localization, languages, offlineLanguages } from "./localization";
 const nav = [
   ["overview", "Overview"],
   ["experience", "Experience"],
+  ["platforms", "Projects"],
   ["systems", "Systems"],
   ["research", "Research"],
-  ["platforms", "Projects"],
+  ["skills", "Skills"],
+  ["certifications", "Certifications"],
+  ["journey", "Journey"],
+  ["resume-center", "Documents"],
 ];
+const recruitmentDocuments = [
+  {
+    href: "/Alam_Md_Tasin_Resume.pdf",
+    title: "Résumé",
+    description: "Concise English profile",
+  },
+  {
+    href: "/Alam_Md_Tasin_DevOps_Engineer_CV.pdf",
+    title: "Detailed CV",
+    description: "Extended English experience",
+  },
+  {
+    href: "/Alam_Md_Tasin_Rirekisho.pdf",
+    title: "履歴書 · Rirekisho",
+    description: "Japanese application résumé",
+  },
+  {
+    href: "/Alam_Md_Tasin_Shokumu_Keirekisho.pdf",
+    title: "職務経歴書 · Shokumu Keirekisho",
+    description: "Japanese professional history",
+  },
+];
+// eslint-disable-next-line react/prop-types
+function DocumentMenu({ primary = false, className = "" }) {
+  return (
+    <details className={["document-menu", className].filter(Boolean).join(" ")}>
+      <summary className={"button" + (primary ? " primary" : "")}>
+        <FiDownload />
+        Open documents
+        <FiChevronDown className="document-menu-chevron" />
+      </summary>
+      <div className="document-menu-popover">
+        {recruitmentDocuments.map((document) => (
+          <a
+            href={document.href}
+            target="_blank"
+            rel="noreferrer"
+            key={document.href}
+          >
+            <FiFileText />
+            <span>
+              <strong>{document.title}</strong>
+              <small>{document.description}</small>
+            </span>
+          </a>
+        ))}
+      </div>
+    </details>
+  );
+}
 const routes = {
   recruiter: [
     ["experience", "Explore experience"],
@@ -171,10 +225,19 @@ export default function Portfolio() {
     }
   };
   const downloadContact = () => {
-    const text =
-      "BEGIN:VCARD\nVERSION:3.0\nFN:Alam Md Tasin\nTITLE:DevOps Engineer\nEMAIL:" +
-      profile.email +
-      "\nURL:https://github.com/Tasin007\nEND:VCARD";
+    const text = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Alam;Md Tasin;;;",
+      "FN:Alam Md Tasin",
+      "TITLE:DevOps Engineer",
+      `EMAIL;TYPE=INTERNET:${profile.email}`,
+      "TEL;TYPE=CELL:+81-70-8522-5753",
+      "ADR;TYPE=WORK:;;;Higashi-Hiroshima;Hiroshima;;Japan",
+      "URL:https://www.linkedin.com/in/mdtasinalam/",
+      "URL:https://github.com/Tasin007",
+      "END:VCARD",
+    ].join("\r\n");
     const url = URL.createObjectURL(new Blob([text], { type: "text/vcard" }));
     const a = document.createElement("a");
     a.href = url;
@@ -334,15 +397,7 @@ export default function Portfolio() {
                   {routes[mode][0][1]}
                   <FiArrowUpRight />
                 </button>
-                <a
-                  className="button"
-                  href="/Alam_Md_Tasin_Resume.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FiDownload />
-                  Résumé
-                </a>
+                <DocumentMenu className="hero-document-menu" />
                 <button className="text-button" onClick={beginTour}>
                   Take the tour
                   <FiArrowRight />
@@ -835,59 +890,7 @@ export default function Portfolio() {
                   </span>
                 </div>
                 <div className="button-row">
-                  <details className="document-menu">
-                    <summary className="button primary">
-                      <FiDownload />
-                      Open documents
-                      <FiChevronDown className="document-menu-chevron" />
-                    </summary>
-                    <div className="document-menu-popover">
-                      <a
-                        href="/Alam_Md_Tasin_Resume.pdf"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <FiFileText />
-                        <span>
-                          <strong>Résumé</strong>
-                          <small>Concise English profile</small>
-                        </span>
-                      </a>
-                      <a
-                        href="/Alam_Md_Tasin_DevOps_Engineer_CV.pdf"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <FiFileText />
-                        <span>
-                          <strong>Detailed CV</strong>
-                          <small>Extended English experience</small>
-                        </span>
-                      </a>
-                      <a
-                        href="/Alam_Md_Tasin_Rirekisho.pdf"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <FiFileText />
-                        <span>
-                          <strong>履歴書 · Rirekisho</strong>
-                          <small>Japanese application résumé</small>
-                        </span>
-                      </a>
-                      <a
-                        href="/Alam_Md_Tasin_Shokumu_Keirekisho.pdf"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <FiFileText />
-                        <span>
-                          <strong>職務経歴書 · Shokumu Keirekisho</strong>
-                          <small>Japanese professional history</small>
-                        </span>
-                      </a>
-                    </div>
-                  </details>
+                  <DocumentMenu primary />
                   <button className="button" onClick={downloadContact}>
                     Contact card
                   </button>
@@ -908,13 +911,7 @@ export default function Portfolio() {
                   Each PDF opens in a new tab.
                 </p>
               </div>
-              <a
-                className="document-scene"
-                href="/Alam_Md_Tasin_Resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open Tasin résumé PDF"
-              >
+              <div className="document-scene" aria-hidden="true">
                 <div className="document-shadow" />
                 <div className="document-sheet">
                   <img src="/tasin-icon.svg" alt="" />
@@ -934,9 +931,9 @@ export default function Portfolio() {
                     <br />
                     AI research
                   </p>
-                  <small>OPEN SOURCE RÉSUMÉ ↗</small>
+                  <small>FOUR DOCUMENT OPTIONS</small>
                 </div>
-              </a>
+              </div>
             </div>
           </Section>
           <section className="contact-section shell" id="contact">
