@@ -315,6 +315,7 @@ ol {
   display: inline-flex;
   align-items: center;
   height: 46px;
+  margin: 0;
   flex: 0 0 auto;
 }
 .document-menu > summary {
