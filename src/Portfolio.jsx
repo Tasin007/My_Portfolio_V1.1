@@ -7,6 +7,8 @@ import {
   FiCode,
   FiCpu,
   FiDownload,
+  FiChevronDown,
+  FiFileText,
   FiGlobe,
   FiMenu,
   FiMoon,
@@ -833,15 +835,59 @@ export default function Portfolio() {
                   </span>
                 </div>
                 <div className="button-row">
-                  <a
-                    className="button primary"
-                    href="/Alam_Md_Tasin_Resume.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FiDownload />
-                    Open résumé
-                  </a>
+                  <details className="document-menu">
+                    <summary className="button primary">
+                      <FiDownload />
+                      Open documents
+                      <FiChevronDown className="document-menu-chevron" />
+                    </summary>
+                    <div className="document-menu-popover">
+                      <a
+                        href="/Alam_Md_Tasin_Resume.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiFileText />
+                        <span>
+                          <strong>Résumé</strong>
+                          <small>Concise English profile</small>
+                        </span>
+                      </a>
+                      <a
+                        href="/Alam_Md_Tasin_DevOps_Engineer_CV.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiFileText />
+                        <span>
+                          <strong>Detailed CV</strong>
+                          <small>Extended English experience</small>
+                        </span>
+                      </a>
+                      <a
+                        href="/Alam_Md_Tasin_Rirekisho.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiFileText />
+                        <span>
+                          <strong>履歴書 · Rirekisho</strong>
+                          <small>Japanese application résumé</small>
+                        </span>
+                      </a>
+                      <a
+                        href="/Alam_Md_Tasin_Shokumu_Keirekisho.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FiFileText />
+                        <span>
+                          <strong>職務経歴書 · Shokumu Keirekisho</strong>
+                          <small>Japanese professional history</small>
+                        </span>
+                      </a>
+                    </div>
+                  </details>
                   <button className="button" onClick={downloadContact}>
                     Contact card
                   </button>
@@ -858,8 +904,8 @@ export default function Portfolio() {
                   </a>
                 </div>
                 <p className="footnote">
-                  The detailed CV is withheld from the public interface pending
-                  a privacy review. The source résumé is included as supplied.
+                  Choose the document that best matches your hiring process.
+                  Each PDF opens in a new tab.
                 </p>
               </div>
               <a
@@ -921,7 +967,7 @@ export default function Portfolio() {
               </button>
               <a
                 className="button"
-                href="https://www.linkedin.com/in/tasin-alam-2034bb2a0"
+                href="https://www.linkedin.com/in/mdtasinalam/"
                 target="_blank"
                 rel="noreferrer"
               >

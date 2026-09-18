@@ -84,6 +84,19 @@ test("React interface renders, opens evidence, searches commands and runs genera
       document.querySelector(".coordinate").textContent,
       /34\.4° N \/ 132\.7° E/,
     );
+    const documentLinks = [
+      ...document.querySelectorAll(".document-menu-popover a"),
+    ].map((link) => link.getAttribute("href"));
+    assert.deepEqual(documentLinks, [
+      "/Alam_Md_Tasin_Resume.pdf",
+      "/Alam_Md_Tasin_DevOps_Engineer_CV.pdf",
+      "/Alam_Md_Tasin_Rirekisho.pdf",
+      "/Alam_Md_Tasin_Shokumu_Keirekisho.pdf",
+    ]);
+    assert.equal(
+      document.querySelector('a[href*="linkedin.com"]').href,
+      "https://www.linkedin.com/in/mdtasinalam/",
+    );
     assert.doesNotMatch(
       document.body.textContent,
       /\\(?:u[0-9a-f]{4}|x[0-9a-f]{2})/i,

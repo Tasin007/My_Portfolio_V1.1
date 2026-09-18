@@ -144,7 +144,7 @@ Never place secrets in `VITE_*` variables or commit `.env`. Without an AI provid
 
 - [Portfolio](https://my-new-portfolio-iota-two.vercel.app/)
 - [GitHub](https://github.com/Tasin007)
-- [LinkedIn](https://www.linkedin.com/in/tasin-alam-2034bb2a0)
+- [LinkedIn](https://www.linkedin.com/in/mdtasinalam/)
 - [Email](mailto:alam.tasin.cse@gmail.com)
 
 ---

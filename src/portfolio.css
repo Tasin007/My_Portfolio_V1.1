@@ -309,6 +309,67 @@ ol {
   gap: 12px;
   flex-wrap: wrap;
 }
+.document-menu {
+  position: relative;
+  z-index: 20;
+}
+.document-menu > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.document-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.document-menu-chevron {
+  transition: transform 0.2s ease;
+}
+.document-menu[open] .document-menu-chevron {
+  transform: rotate(180deg);
+}
+.document-menu-popover {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  width: min(380px, calc(100vw - 48px));
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: 0 22px 60px #0008;
+}
+.document-menu-popover a {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 13px 14px;
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+}
+.document-menu-popover a:hover,
+.document-menu-popover a:focus-visible {
+  background: var(--panel2);
+  outline: none;
+}
+.document-menu-popover svg {
+  margin-top: 3px;
+  color: var(--cyan);
+}
+.document-menu-popover span,
+.document-menu-popover strong,
+.document-menu-popover small {
+  display: block;
+}
+.document-menu-popover strong {
+  font-size: 14px;
+}
+.document-menu-popover small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
 .tag {
   border: 1px solid var(--line);
   background: var(--panel2);
