@@ -133,8 +133,7 @@ Never place secrets in `VITE_*` variables or commit `.env`. Without an AI provid
 
 ## Privacy and evidence policy
 
-- The public résumé is intentionally available for recruitment.
-- The detailed CV is not stored in this public repository; recruiters can request it directly.
+- The résumé, detailed CV, Japanese rirekisho and Japanese shokumu keirekisho are intentionally available for recruitment.
 - Company identifiers are typographic references, not official logos.
 - No private architecture, client data or fabricated benchmark is published.
 - The assistant cannot execute commands, browse private systems or invent missing evidence.

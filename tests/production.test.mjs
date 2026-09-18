@@ -26,6 +26,14 @@ test("compiled production bundle renders and opens interactive research", async 
     const filename = (await readdir("dist/assets")).find((f) =>
       f.endsWith(".js"),
     );
+    for (const document of [
+      "Alam_Md_Tasin_Resume.pdf",
+      "Alam_Md_Tasin_DevOps_Engineer_CV.pdf",
+      "Alam_Md_Tasin_Rirekisho.pdf",
+      "Alam_Md_Tasin_Shokumu_Keirekisho.pdf",
+    ]) {
+      assert.ok((await readFile("dist/" + document)).byteLength > 1_000);
+    }
     dom.window.eval(await readFile("dist/assets/" + filename, "utf8"));
     await new Promise((r) => setTimeout(r, 80));
     const d = dom.window.document;

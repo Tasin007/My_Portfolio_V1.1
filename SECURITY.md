@@ -14,5 +14,5 @@ Do not open a public issue containing credentials, personal information or a wor
 
 - AI credentials belong only in server environment variables.
 - Variables prefixed with `VITE_` are public and must never contain secrets.
-- The detailed CV is intentionally excluded from the public repository and production build.
+- Recruitment documents are intentionally public; private supporting records and credentials must remain excluded.
 - The browser demonstrations use synthetic data and do not connect to client infrastructure.

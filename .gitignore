@@ -17,9 +17,6 @@ dist
 dist-ssr
 *.local
 
-# Keep detailed CV versions out of the public portfolio repository.
-public/*CV*.pdf
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

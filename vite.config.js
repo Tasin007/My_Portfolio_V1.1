@@ -2,6 +2,18 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { copyFileSync, mkdirSync, createReadStream } from "node:fs";
 
+const publicAssets = {
+  "/tasin-icon.svg": "image/svg+xml",
+  "/icon-192.png": "image/png",
+  "/icon-512.png": "image/png",
+  "/manifest.webmanifest": "application/manifest+json",
+  "/Alam_Md_Tasin_Resume.pdf": "application/pdf",
+  "/Alam_Md_Tasin_DevOps_Engineer_CV.pdf": "application/pdf",
+  "/Alam_Md_Tasin_Rirekisho.pdf": "application/pdf",
+  "/Alam_Md_Tasin_Shokumu_Keirekisho.pdf": "application/pdf",
+  "/api/profile.json": "application/json",
+};
+
 // https://vitejs.dev/config/
 export default defineConfig({
   publicDir: false,
@@ -11,30 +23,17 @@ export default defineConfig({
       name: "public-asset-allowlist",
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
-          const assets = {
-            "/tasin-icon.svg": "image/svg+xml",
-            "/icon-192.png": "image/png",
-            "/icon-512.png": "image/png",
-            "/manifest.webmanifest": "application/manifest+json",
-            "/Alam_Md_Tasin_Resume.pdf": "application/pdf",
-            "/api/profile.json": "application/json",
-          };
           const path = req.url.split("?")[0];
-          if (!assets[path]) return next();
-          res.setHeader("Content-Type", assets[path]);
+          if (!publicAssets[path]) return next();
+          res.setHeader("Content-Type", publicAssets[path]);
           createReadStream("public" + path).pipe(res);
         });
       },
       closeBundle() {
         mkdirSync("dist/api", { recursive: true });
-        for (const file of [
-          "tasin-icon.svg",
-          "icon-192.png",
-          "icon-512.png",
-          "manifest.webmanifest",
-          "Alam_Md_Tasin_Resume.pdf",
-          "api/profile.json",
-        ])
+        for (const file of Object.keys(publicAssets).map((path) =>
+          path.slice(1),
+        ))
           copyFileSync("public/" + file, "dist/" + file);
       },
     },
