@@ -222,6 +222,30 @@ export const skills = [
     "research",
   ],
   [
+    "Kubernetes",
+    "Certified learning",
+    "Delivery & automation",
+    "Core Kubernetes concepts, workloads, services and container orchestration.",
+    "The Linux Foundation · LFS158",
+    "certifications",
+  ],
+  [
+    "Secure Software / OpenSSF",
+    "Certified learning",
+    "Delivery & automation",
+    "Secure software development, CI/CD security fundamentals and OpenSSF best practices.",
+    "The Linux Foundation / OpenSSF · LFD121",
+    "certifications",
+  ],
+  [
+    "DevOps / SRE",
+    "Certified learning",
+    "Observability",
+    "DevOps foundations, reliability principles and Site Reliability Engineering concepts.",
+    "The Linux Foundation · LFS162",
+    "certifications",
+  ],
+  [
     "React / Node.js",
     "Listed skills",
     "AI & development",
@@ -237,6 +261,29 @@ export const skills = [
     "Résumé technical skills",
     "resume-center",
   ],
+];
+export const certifications = [
+  {
+    code: "LFD121",
+    title: "Developing Secure Software",
+    issuer: "The Linux Foundation / OpenSSF",
+    focus:
+      "Secure software development, CI/CD security fundamentals and OpenSSF best practices.",
+  },
+  {
+    code: "LFS158",
+    title: "Introduction to Kubernetes",
+    issuer: "The Linux Foundation",
+    focus:
+      "Kubernetes fundamentals, workloads, services and container orchestration concepts.",
+  },
+  {
+    code: "LFS162",
+    title: "Introduction to DevOps and Site Reliability Engineering",
+    issuer: "The Linux Foundation",
+    focus:
+      "DevOps foundations, reliability principles and Site Reliability Engineering concepts.",
+  },
 ];
 export const journey = [
   [
@@ -281,6 +328,15 @@ export const evidence = [
     id: "research",
     title: "Hiroshima University research",
     text: profile.research,
+  },
+  {
+    id: "certifications",
+    title: "Linux Foundation and OpenSSF credentials",
+    text: certifications
+      .map((certificate) =>
+        [certificate.title, certificate.code, certificate.issuer, certificate.focus].join(" "),
+      )
+      .join(" "),
   },
   {
     id: "resume-center",

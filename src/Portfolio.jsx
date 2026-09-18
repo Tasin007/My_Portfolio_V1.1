@@ -14,6 +14,7 @@ import {
   FiX,
   FiGitBranch,
   FiActivity,
+  FiAward,
   FiCopy,
   FiCheck,
   FiMail,
@@ -28,6 +29,7 @@ import {
   platforms,
   responsibilities,
   skills,
+  certifications,
   journey,
 } from "./content";
 import { initialSimulation, simulationReducer } from "./simulation";
@@ -47,6 +49,7 @@ const routes = {
   recruiter: [
     ["experience", "Explore experience"],
     ["platforms", "View platform work"],
+    ["certifications", "View certifications"],
     ["resume-center", "Open résumé"],
   ],
   engineer: [
@@ -706,8 +709,35 @@ export default function Portfolio() {
             )}
           </Section>
           <Section
-            id="journey"
+            id="certifications"
             number="07"
+            label="PROFESSIONAL CREDENTIALS"
+            title={
+              <>
+                Credentials that back the skills.
+                <br />
+                Learning verified by trusted foundations.
+              </>
+            }
+            description="Linux Foundation and OpenSSF coursework covering secure software development, Kubernetes, DevOps and Site Reliability Engineering. Completion dates and credential IDs are intentionally kept private."
+          >
+            <div className="skills-grid">
+              {certifications.map((certificate) => (
+                <article className="skill-card" key={certificate.code}>
+                  <div>
+                    <FiAward />
+                    <Tag>{certificate.code}</Tag>
+                  </div>
+                  <h3>{certificate.title}</h3>
+                  <p>{certificate.focus}</p>
+                  <span className="launch-link">{certificate.issuer}</span>
+                </article>
+              ))}
+            </div>
+          </Section>
+          <Section
+            id="journey"
+            number="08"
             label="THE JOURNEY"
             title={
               <>
@@ -762,7 +792,7 @@ export default function Portfolio() {
           </Section>
           <Section
             id="resume-center"
-            number="08"
+            number="09"
             label="RECRUITER CENTER"
             title={
               <>
@@ -796,6 +826,10 @@ export default function Portfolio() {
                   <span>
                     <strong>Education</strong>B.Sc. CSE · Daffodil International
                     University · 2024
+                  </span>
+                  <span>
+                    <strong>Credentials</strong>Linux Foundation / OpenSSF · 3
+                    completed courses
                   </span>
                 </div>
                 <div className="button-row">

@@ -85,6 +85,18 @@ const japanese = {
   All: "すべて",
   "Technology evidence": "技術の根拠",
   "Open related evidence": "関連する根拠を見る",
+  "PROFESSIONAL CREDENTIALS": "専門資格",
+  "Credentials that back the skills.": "スキルを裏付ける資格。",
+  "Learning verified by trusted foundations.": "信頼できる組織によって認定された学習。",
+  "Linux Foundation and OpenSSF coursework covering secure software development, Kubernetes, DevOps and Site Reliability Engineering. Completion dates and credential IDs are intentionally kept private.":
+    "Linux FoundationおよびOpenSSFによる、セキュアソフトウェア開発、Kubernetes、DevOps、Site Reliability Engineeringの学習資格です。修了日と認定IDはプライバシー保護のため公開していません。",
+  "Secure software development, CI/CD security fundamentals and OpenSSF best practices.":
+    "セキュアソフトウェア開発、CI/CDセキュリティの基礎、OpenSSFベストプラクティス。",
+  "Kubernetes fundamentals, workloads, services and container orchestration concepts.":
+    "Kubernetesの基礎、ワークロード、サービス、コンテナオーケストレーションの概念。",
+  "DevOps foundations, reliability principles and Site Reliability Engineering concepts.":
+    "DevOpsの基礎、信頼性の原則、Site Reliability Engineeringの概念。",
+  Credentials: "資格",
   "THE JOURNEY": "これまでの歩み",
   "Built across borders.": "国境を越えて築いた経験。",
   "Still moving forward.": "次の挑戦へ。",
