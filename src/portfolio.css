@@ -312,10 +312,19 @@ ol {
 .document-menu {
   position: relative;
   z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  flex: 0 0 auto;
 }
 .document-menu > summary {
   list-style: none;
   cursor: pointer;
+  height: 46px;
+  min-height: 46px;
+  margin: 0;
+  padding-block: 0;
+  line-height: 1;
 }
 .document-menu > summary::-webkit-details-marker {
   display: none;
