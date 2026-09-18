@@ -1,6 +1,6 @@
 # Alam Md Tasin — DevOps & Cloud Portfolio
 
-[![Live portfolio](https://img.shields.io/badge/Live_Portfolio-00d4ff?style=for-the-badge&logo=vercel&logoColor=07111f)](https://my-portfolio-v1-1.vercel.app/)
+[![Live portfolio](https://img.shields.io/badge/Live_Portfolio-00d4ff?style=for-the-badge&logo=vercel&logoColor=07111f)](https://my-new-portfolio-iota-two.vercel.app/)
 [![CI](https://img.shields.io/github/actions/workflow/status/Tasin007/My_Portfolio_V1.1/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/Tasin007/My_Portfolio_V1.1/actions/workflows/ci.yml)
 [![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=07111f)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
@@ -11,7 +11,7 @@ The portfolio presents production experience through working browser demonstrati
 
 ## Live experience
 
-**[Open the portfolio →](https://my-portfolio-v1-1.vercel.app/)**
+**[Open the portfolio →](https://my-new-portfolio-iota-two.vercel.app/)**
 
 Choose a route designed for your purpose:
 
@@ -142,7 +142,7 @@ Never place secrets in `VITE_*` variables or commit `.env`. Without an AI provid
 
 ## Contact
 
-- [Portfolio](https://my-portfolio-v1-1.vercel.app/)
+- [Portfolio](https://my-new-portfolio-iota-two.vercel.app/)
 - [GitHub](https://github.com/Tasin007)
 - [LinkedIn](https://www.linkedin.com/in/tasin-alam-2034bb2a0)
 - [Email](mailto:alam.tasin.cse@gmail.com)
