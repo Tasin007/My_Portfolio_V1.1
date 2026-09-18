@@ -59,7 +59,7 @@ test("primary interface has no detectable accessibility violations", async () =>
     banner: {
       js: "import {createRequire} from 'node:module'; const require=createRequire(import.meta.url);",
     },
-    loader: { ".jpeg": "dataurl", ".jpg": "dataurl" },
+    loader: { ".jpeg": "dataurl", ".jpg": "dataurl", ".png": "dataurl" },
   });
   const React = await import("react");
   const { createRoot } = await import("react-dom/client");
